@@ -28,6 +28,7 @@ console.log("Età: " + ageUser);
 /* ELABORO IL PREZZO DEL BIGLIETTO SENZA SCONTI */
 
 let ticketPrice = 0;
+let message='Nessun sconto applicato';
 
 if(!isNaN(numberKm) && !isNaN(ageUser))
 {
@@ -46,17 +47,21 @@ if(ticketPrice)
     if(ageUser < 18)
     {
         ticketPrice -= (ticketPrice * 20) / 100 ;
+        message = "Il prezzo totale del biglietto è scontato del 20% perchè hai meno di 18 anni";
+        
+
     }
     if(ageUser > 65)
     {
         ticketPrice -= (ticketPrice * 40) / 100 ;
+        message = "Il prezzo totale del biglietto è scontato del 40% perchè hai più di 65 anni";
     }
 
     /* RECUPERO L'ELEMENTO DOVE INSERIRE IL RISULTATO */ 
 
     console.log("Prezzo biglietto:" + ticketPrice.toFixed(2));
     const spanElement = document.getElementById("ticket-price");
-    spanElement.innerHTML = `${ticketPrice.toFixed(2)} € <i class="fas fa-ticket-alt"></i>`;
+    spanElement.innerHTML = `${ticketPrice.toFixed(2)} € <i class="fas fa-ticket-alt"></i> <br> ${message}`;
 }
 
 
