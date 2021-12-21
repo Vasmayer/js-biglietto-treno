@@ -8,6 +8,10 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 /* 
 
 1-chiedi all'utente il numero di km da percorrere
-2-chiedi l'età
+2-chiedi all'utente l'età
+3- calcolo prezzo totale del biglietto 0.21€ al km
+4-va applicato uno sconto del 20% per i minorenni
+5-va applicato uno sconto del 40% per gli over 65.
+6- stampare il risultato con due decimali
 
 */
