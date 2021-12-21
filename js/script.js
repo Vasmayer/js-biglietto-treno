@@ -18,5 +18,19 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 
 console.log("JS OK");
 
+/* OTTENGO I DATI RELATIVI ALL'UTENTE */
 const numberKm = parseInt(prompt("Inserisci il numero dei KM da percorrere").trim());
 const ageUser = parseInt(prompt("Inserisci la tua età").trim());
+
+/* ELABORO IL PREZZO DEL BIGLIETTO SENZA SCONTI */
+
+let ticketPrice = 0;
+
+if(!isNaN(numberKm) && !isNaN(ageUser))
+{
+    /* SE IN INPUT HO VALORI NUMERICI CALCOLO IL PREZZO DEL BIGLIETTO */
+    
+        ticketPrice = 0.21 * numberKm;
+}
+ 
+
