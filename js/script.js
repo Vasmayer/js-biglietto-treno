@@ -15,3 +15,8 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 6- stampare il risultato con due decimali
 
 */
+
+console.log("JS OK");
+
+const numberKm = parseInt(prompt("Inserisci il numero dei KM da percorrere").trim());
+const ageUser = parseInt(prompt("Inserisci la tua età").trim());
