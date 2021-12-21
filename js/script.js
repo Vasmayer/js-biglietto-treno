@@ -22,6 +22,9 @@ console.log("JS OK");
 const numberKm = parseInt(prompt("Inserisci il numero dei KM da percorrere").trim());
 const ageUser = parseInt(prompt("Inserisci la tua età").trim());
 
+console.log("Kilometri: " + numberKm);
+console.log("Età: " + ageUser);
+
 /* ELABORO IL PREZZO DEL BIGLIETTO SENZA SCONTI */
 
 let ticketPrice = 0;
@@ -29,8 +32,25 @@ let ticketPrice = 0;
 if(!isNaN(numberKm) && !isNaN(ageUser))
 {
     /* SE IN INPUT HO VALORI NUMERICI CALCOLO IL PREZZO DEL BIGLIETTO */
-    
+
         ticketPrice = 0.21 * numberKm;
 }
+else
+{
+    alert("Non hai inserito valori numerici!");
+}
  
+if(ticketPrice!=0)
+{
+    if(ageUser < 18)
+    {
+        ticketPrice = ticketPrice - ((ticketPrice * 20) / 100 );
+    }
+    if(ageUser > 65)
+    {
+        ticketPrice = ticketPrice - ((ticketPrice * 40) / 100 );
+    }
+
+    console.log("Prezzo biglietto:" + ticketPrice.toFixed(2));
+}
 
