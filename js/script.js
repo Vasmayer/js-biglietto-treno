@@ -40,17 +40,26 @@ else
     alert("Non hai inserito valori numerici!");
 }
  
-if(ticketPrice!=0)
+/* SE E' STATO INIZZIALIZZATO IL PREZZO DEL BIGLIETTO APPLICO LO SCONTO IN BASE ALL'ETA' */
+if(ticketPrice)
 {
     if(ageUser < 18)
     {
-        ticketPrice = ticketPrice - ((ticketPrice * 20) / 100 );
+        ticketPrice -= (ticketPrice * 20) / 100 ;
     }
     if(ageUser > 65)
     {
-        ticketPrice = ticketPrice - ((ticketPrice * 40) / 100 );
+        ticketPrice -= (ticketPrice * 40) / 100 ;
     }
 
+    /* RECUPERO L'ELEMENTO DOVE INSERIRE IL RISULTATO */ 
+
     console.log("Prezzo biglietto:" + ticketPrice.toFixed(2));
+    const spanElement = document.getElementById("ticket-price");
+    spanElement.innerHTML = `${ticketPrice.toFixed(2)} € <i class="fas fa-ticket-alt"></i>`;
 }
+
+
+
+
 
